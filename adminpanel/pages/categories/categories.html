@@ -1,0 +1,127 @@
+<div class="row header-subheader ">
+    <div>
+        الرئيسية > لوحة التحكم > الأخبار > الفئات
+    </div>
+</div>
+
+<div class="container">
+    <div class="content_header">
+        <div class="title">
+            <span class="title_text">الفئات</span>
+        </div>
+        <div $click="showModal('createcategory-modal')" class="categories-add-button ">
+            <div class="fas fa-plus"></div>
+            <div> اضافة فئة</div>
+        </div>
+    </div>
+    <div  $if='!$loading'  style="direction:ltr"  class="search-box">
+        <input id='search' onkeyup='searchElement(1)' type="text"  placeholder='البحث عن طريق اسم الفئة'>
+        <i id="icon if" class="search id"></i>
+    </div>
+    <div $if='$loading' class='flex-container-center-all-column height-100'>
+        <img src="./img/loader.gif" alt="">
+    </div>
+    
+    <div $if='!$loading && $categories.length == 0' class='flex-container-center-all-column height-100'>
+
+        <h1>لا يوجد فئات</h1>
+    </div>
+
+    <table $if='!$loading && $categories.length > 0' id="content" class="content">
+        <thead>
+            <tr class="first_row">
+                <th>#</th>
+                <th>الفئة</th>
+                <th>الحالة</th>
+                <th>العمليات</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody" $for="cta of categories">
+            <tr class='user_info'> 
+                <td class="user_no">{{$i+1}}</td>
+                <td class="user_full">
+                    <span class="user_name" $style="'font-size:18px': true">{{$cta.name}}</span>
+                </td>
+                <td>
+                    <div>
+                        <div $if="$userRole==3">
+                            <select class="selection" $change='updateCategoryStatus($i)'
+                                $style=" 'font-size:18px; font-family:'Segoe UI'; border:none': true">
+                                <option value="0"> غير فعال</option>
+                                <option value="1">فعال</option>
+                            </select>
+                        </div>
+                        <div $if="$userRole==2">
+                            <span $if="$cta.isActive"
+                                $style=" 'font-size:18px; font-family:'Segoe UI'; border:none': true">فعال</span>
+                            <span $if="!$cta.isActive"
+                                $style=" 'font-size:18px; font-family:'Segoe UI'; border:none': true"> غير فعال</span>
+                        </div>
+                    </div>
+                </td>
+                    <td> 
+                        <span $if="$userRole==3">
+                            <i class="fas fa-trash-alt delete_user"
+                                $style="'font-size:20px; color:red; text-align:center; cursor:pointer' : true"
+                                $click="showModal('delete','$i')"></i>
+                        </span>
+                        <i class="far fa-edit icon color-blue" $click="showModal('createcategory-edit-modal',$i)"></i>
+                    </td>
+            </tr> 
+        </tbody>
+    </table>
+</div>
+<div class="createcategory-modal" id="createcategory-modal">
+    <div id="createcategory-modalcontent">
+        <i class="fas fa-times-circle" id="close" $click="hideModal('createcategory-modal')"></i>
+        <div style="width:100%;text-align: center;">
+            <h2 id="modal-header-for-adding">
+                إضافة فئة جديدة
+            </h2>
+        </div>
+        <form class='cat-centered-row' $submit="createCategory()">
+            <div class="createcategory-flex-container-center-all">
+                <div class='cat-centered-row mb-5'>
+                    <input type="text" id="categoryname" placeholder="أدخل اسم الفئة" maxlength="20" minlength="3"
+                        required>
+                </div>
+                <div class='cat-centered-row'>
+                    <input type="submit" id="createcategory-btn" value="انشاء">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="createcategory-modal" id="createcategory-edit-modal" tabindex="-1">
+    <div id="createcategory-modalcontent">
+        <i class="fas fa-times-circle" id="close" $click="hideModal('createcategory-edit-modal')"></i>
+        <div class='cat-centered-row'>
+            <h2 id="modal-header-for-adding">
+                تعديل اسم الفئة
+            </h2>
+        </div>
+        <form id="category-edit-form" class='cat-centered-row' $submit="updateCategoryName()">
+            <div class=' flex-container-center-space-between-column '>
+                <div class='mb-5'>
+                    <input type="text" id="editcategoryname" placeholder="أدخل اسم الفئة" maxlength="20" minlength="3"
+                        required>
+                </div>
+                <div class='cat-centered-row'>
+                    <button type="submit" id="createcategory-btn">تعديل</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<div class="modal-delete" id="delete">
+    <div class="modal-wrapper">
+        <div class="contain">
+            <p>هل أنت متأكد من إزالة هذه الفئة ؟</p>
+            <div class="modal-button">
+                <button class="modal-button button1" $click="deleteCategory()">نعم</button>
+                <button class="modal-button button2" $click="hideModal('delete')">لا</button>
+            </div>
+        </div>
+    </div>
+</div>

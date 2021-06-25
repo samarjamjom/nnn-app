@@ -1,0 +1,118 @@
+$newsElementWidth: 500px;
+$labelWidth: 200px;
+$btn-success-color: #27ae60;
+@mixin flexbox($direction) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.add_news_form {
+    .title {
+        font-size: 50px;
+    }
+    .center_items {
+        @include flexbox(column);
+        justify-content: center;
+        width: 100%;
+        padding-top: 10px;
+    }
+    .content_label_div {
+        @include flexbox(row);
+        justify-content: center;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .news_element {
+        width: $newsElementWidth;
+        height: 25px;
+    }
+    .news {
+        height: auto;
+        border: 0.5px solid grey;
+        .news_body {
+            height: 258px;
+        }
+    }
+    .description {
+        height: 50px;
+        resize: none;
+    }
+    .choice {
+        width: 15px;
+        height: 15px;
+        padding-right: 5px;
+    }
+    .outer_choice_div {
+        justify-content: center;
+        .inner_choice_div {
+            @include flexbox(row);
+            justify-content: space-between;
+        }
+    }
+    .category {
+        height: 30px;
+        width: calc(#{$labelWidth} + #{$newsElementWidth} -96px);
+    }
+    .date {
+        min-width: 90px;
+        margin-left: 10px;
+        .checkbox {
+            padding-right: 10px;
+        }
+    }
+    label {
+        width: 200px;
+        height: 28px;
+        padding: 3px;
+        text-align: center;
+        font-weight: 300px;
+        font-size: 20px;
+    }
+    .button_div {
+        @include flexbox(row);
+        justify-content: center;
+        margin-bottom: 30px;
+        .button {
+            justify-content: center;
+            width: 200px;
+            height: 50px;
+            background-color: $btn-success-color;
+            border-style: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            &:hover {
+                background: darken($btn-success-color, 10%)
+            }
+            &:disabled{
+                background-color: #005aff;
+            }
+        }
+    }
+}
+
+.ql-picker-label {
+    direction: ltr;
+}
+
+.addnews-img-container {
+    height: 300px;
+    width: 300px;
+    display: none;
+    img {
+        height: 300px;
+        width: 300px;
+        max-width: 100%;
+    }
+}
+
+.ql-editor {
+    &.ql-direction-rtl {
+        direction: rtl;
+    }
+}

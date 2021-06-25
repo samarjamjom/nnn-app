@@ -1,0 +1,94 @@
+$button-font:#D8CFCF;
+$background-color:#ffffff;
+$create-button-color:#06953f;
+$font-family-name:Dubai Medium;
+$button-color:white;
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    // background: url("../background.jpg");
+}
+
+.all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: calc(100% - 101px);
+    position: relative;
+}
+
+.contain {
+    height: auto;
+    outline: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: -webkit-center;
+    justify-content: space-between;
+    background-color: white;
+    div {
+        padding: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+     
+    }
+    position: relative;
+    background-color: $background-color;
+    border-radius: 3%;
+    span{
+        width: 50%;
+    }
+    input {
+        color: #333;
+        height: 40px;
+        padding: 2px;
+        direction: rtl;
+        position: relative;
+        display: block;
+        font-size: 25px;
+        font-family: $font-family-name;
+    }
+}
+
+.create-new-user {
+    font-size: 20px;
+    outline: none;
+    background-color: $create-button-color;
+    cursor: pointer;
+    border: 1px $create-button-color;
+    min-height: 60px;
+    text-align: center;
+    margin-bottom: -1px;
+    font-family: Calibri Light;
+    color: $button-color;
+    width: 100%;
+}
+
+.flex-box-35 {
+    flex-basis: 45%;
+}
+
+@media only screen and (max-width:768px) {
+    .flex-box-35 {
+        flex-basis: 70%;
+    }
+    .contain div {
+        padding: 10px;
+    }
+}
+
+.create-new-user:hover {
+    background-color: darken($create-button-color, 10%);
+}
+
+::placeholder {
+    font-size: 20px;
+}
+
+.newuser-row {
+    width: 100%;
+}

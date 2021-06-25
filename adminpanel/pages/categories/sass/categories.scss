@@ -1,0 +1,202 @@
+$add-color: white;
+$modal-font-color: #27ae60;
+$modal-btn:#27ae60;
+.categories-add-button {
+    min-width: 80px;
+    min-height: 70px;
+    font-weight: 700;
+    color: white;
+    background: $modal-font-color;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.categories-add-button:hover {
+    background: darken($modal-font-color, 10%);
+}
+
+.categories-modal-base {
+    outline: none;
+    left: 0;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.categories-modal {
+    outline: none;
+    border-radius: 27px;
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 200px;
+    max-height: 300px;
+    color: $modal-font-color;
+    background-color: #e7e7e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.categories-modal-input {
+    min-height: 30px;
+    min-width: 200px;
+    max-width: 300px;
+    color: $modal-font-color;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.categories-save-button {
+    margin-top: 5%;
+    background-color: $modal-font-color;
+    cursor: pointer;
+    border: none;
+    min-width: 200px;
+    min-height: 50px;
+    color: $add-color;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.categories-button-close {
+    position: absolute;
+    right: 2%;
+    top: 0;
+    color: $modal-font-color;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.categories-button-close:hover,
+.categories-button-close:focus {
+    color: #000;
+    cursor: pointer;
+}
+
+.add-button {
+    min-width: 80px;
+    min-height: 70px;
+    font-weight: 700;
+    color: white;
+    background: $add-color;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.add-button:hover {
+    background: darken($add-color, 10%);
+}
+
+.createcategory-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fade-in 0.2s ease-in forwards;
+}
+
+#modal-header-for-adding {
+    border-top-left-radius: 20px;
+    padding: 10px;
+    margin: 0;
+    border-top-right-radius: 20px;
+}
+
+.createcategory-flex-container-center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+#createcategory-modalcontent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin: auto;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 20px;
+}
+
+#createcategory-btn {
+    width: 100%;
+    min-height: 50px;
+    font-weight: 700;
+    border: none;
+    color: white;
+    font-size: 20px;
+    background-color: $modal-btn;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#createcategory-btn:hover {
+    cursor: pointer;
+    background: darken( $modal-btn, 10%);
+}
+
+#editcategoryname {
+    height: 42px;
+    
+    font-size: 16px;
+}
+
+#categoryname {
+    min-width: 170px;
+    min-height: 50px;
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 1%;
+    margin-top: 10px;
+}
+
+#close {
+    color: #383636;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cat-centered-row {
+    width: 101%;
+    text-align: center;
+}

@@ -1,0 +1,58 @@
+<!--
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Diana Mujahed <diana.muj98@gmail.com>
+
+    File description:
+        This file contains HTML code for the website header which includes the navebar and urgentNews.
+-->
+
+<div class="header">
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="navbar-right">
+            <a class="logo" href="#/home">
+                <img class="logo-img" src="./img/logo.png" alt="شبكة الوحدة الإخبارية">
+            </a>
+            <div class="categories-container">
+                <ul id="categories-list">
+                    <li class="tab">
+                        <a href="#/home">الصفحة الرئيسية</a>
+                    </li>
+                    <span $for="category of mainCategoriesList">
+                        <li class="tab">
+                            <a href="#/categories/{{$category.value.id}}">{{$category.value.title}}</a>
+                        </li>
+                    </span>
+                    <span $if="{{$moreCategoriesList.length}}">
+                        <li class="tab expand">
+                            <a >المزيد
+                                <img class="expand-button" src="img/expand-button.png">
+                                <ul class="sub-menu" $for="category of moreCategoriesList">
+                                    <li class="sub-item">
+                                        <a href="#/categories/{{$category.value.id}}">{{$category.value.title}}</a>
+                                    </li>
+                                </ul>
+                            </a>
+                        </li>
+                    </span>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar-left">
+            <a href="/adminpanel/index.html" class="login-button">تسجيل الدخول</a>
+        </div>
+    </div>
+
+    <!-- URGENT -->
+    <div id="urgent-container">
+        <div>عاجل</div>
+        <marquee id="urgent-content" direction="right" onmouseover="stop()" onmouseout="start()"
+            $for="new of urgentNews">
+            <a href="#/details/{{$new.value.id}}">{{$new.value.title}} </a>
+        </marquee>
+    </div>
+</div>

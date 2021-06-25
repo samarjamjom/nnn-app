@@ -1,0 +1,165 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.login-content {
+  background: white;
+  width: 100%;
+  position: relative;
+  height: 100%;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex-box-30 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  width: 30%;
+  height: 80%;
+}
+
+.flex-box-70 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  background: url("./../../../img/loginbackground.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 72%;
+  padding: 50px 50px 150px 320px;
+  overflow: hidden;
+}
+
+.flex-box-70:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  right: 100%;
+  width: 10000px;
+  height: 100%;
+  background-color: #fff;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transform: skewX(156deg);
+  transform: skewX(156deg);
+}
+
+.logo {
+  z-index: 2;
+}
+
+.logo img {
+  width: 200px;
+  height: 100px;
+  opacity: 1;
+}
+
+.form-box {
+  height: 100%;
+  width: 80%;
+}
+
+.form-box form {
+  height: inherit;
+  width: 100%;
+}
+
+.log-form {
+  margin: 20px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.log-form div {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.log-form div input {
+  height: 50px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.username {
+  margin-bottom: 15px;
+}
+
+.password {
+  margin-bottom: 15px;
+}
+
+.btn input {
+  background-color: #57b846;
+  border: 1px solid #57b846;
+  color: white;
+  font-size: 20px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.btn:hover input {
+  background-color: #469338;
+  border: 1px solid #469338;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+/*# sourceMappingURL=login.css.map */

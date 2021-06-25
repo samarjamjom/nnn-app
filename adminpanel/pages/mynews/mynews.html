@@ -1,0 +1,83 @@
+<div class="row header-subheader ">
+    <div>
+        الرئيسية > لوحة التحكم > الأخبار > أخباري
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="content_header">
+        <div class="title">
+            <span class="title_text">أخباري</span>
+        </div>
+        <div style="direction:ltr" class="search-box">
+            <input id='search' onkeyup='searchElement(1)' type="text" placeholder='ادخل عنوان الخبر'>
+            <i id="icon if" class="search id"></i>
+        </div>
+    </div>
+    <div $if='$loading' class='flex-container-center-all-column height-100'>
+        <img src="./img/loader.gif" alt="">
+    </div>
+    <div $if='!$loading && $myNewsPage.length == 0' class='flex-container-center-all-column height-100'>
+
+        <h1>لا يوجد أخبار </h1>
+    </div>
+    <table  $if='!$loading && $myNewsPage.length != 0'  id="table" class="content">
+        <thead>
+            <tr class="first_row">
+                <th>#</th>
+                <th>عنوان الخبر</th>
+                <th>الفئة</th>
+                <th>الحالة</th>
+                <th>العمليات</th>
+
+            </tr>
+        </thead>
+
+
+
+        <tbody id="tablebody" $for=" news of myNewsPage">
+            <tr class="user_info">
+                <td class="user_no">{{$i + 1}}</td>
+                <td class="user_full">
+                    <span class="user_name">{{$news.title}}</span>
+                </td>
+
+                <td>
+                    <div $for="test of categories">
+                        <div $if="$news.categoryId == $test._id">
+                            <span>{{$test.name}}</span>
+                        </div>
+                    </div>
+                </td>
+
+                <td>
+                    <div $if="$myNewsPage[$i].isActive == 1">
+                        <span>مفعل</span>
+                    </div>
+                    <div $if="$myNewsPage[$i].isActive == 0 ">
+                        <span>غير مفعل</span>
+                    </div>
+                </td>
+                <td>
+                    <i value="click" class="fas fa-trash-alt delete_user" $click="show('delete',$i)"></i>
+                    <i class="far fa-edit icon color-blue" $click="redirect($news._id) "></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal-delete" id="delete">
+    <div class="modal-wrapper">
+        <div class="contain">
+            <p>هل أنت متأكد من إزالة هذا الخبر ؟</p>
+            <div class="modal-button">
+                <button class="modal-button button1" $click="deleteNews();">نعم</button>
+                <button class="modal-button button2" $click="hide('delete')">لا</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>

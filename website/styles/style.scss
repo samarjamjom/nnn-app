@@ -1,0 +1,81 @@
+/*
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Aseel Arafeh <arafehaseel@gmail.com>
+
+    File description:
+        This file contains style code for urgent news section.
+*/
+
+@import './variables';
+@import './functions';
+
+@include initialFormat();
+
+@media screen and (min-height: 901px) {
+
+    #urgent-container {
+        font-size: 28px;
+    }
+
+}
+
+@media screen and (max-height: 900px) {
+
+    #urgent-container {
+        font-size: 23.333px;
+    }
+
+}
+
+@media screen and (max-height: 810px) {
+
+    #urgent-container {
+        font-size: 21px;
+    }
+
+}
+
+@media screen and (max-height: 768px) {
+
+    #urgent-container {
+        font-size: 20px;
+    }
+
+}
+
+#urgent-container {
+
+    @include flexFunction (center, center, 100%, 41.356%, row);
+    @include positioning (absolute, 58.644%, auto, 0, 0);
+    background-color: map-get($map: $colors, $key: websiteColor);
+    color: map-get($map: $colors, $key: whiteColor);
+    font-weight: bold;
+    min-height: 36.65px;
+
+    div {
+
+        @include flexFunction (center, center, 5%, auto, row);
+        padding-right: 4%;
+        padding-left: 4%;
+
+    }
+
+    #urgent-content {
+
+        direction: ltr;
+        padding: 1.042%;
+        padding-right: 5.21%;
+        font-size: 70%;
+
+        a {
+
+            text-decoration: none;
+            padding-left: 100px;
+            color: map-get($map: $colors, $key: whiteColor);
+        }
+    }
+}

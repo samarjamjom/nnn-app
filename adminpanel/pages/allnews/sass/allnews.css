@@ -1,0 +1,12 @@
+.allnews-inline-block {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.allnews-title-limit {
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+  width: 400px;
+}
+/*# sourceMappingURL=allnews.css.map */

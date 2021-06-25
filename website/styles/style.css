@@ -1,0 +1,108 @@
+/*
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Aseel Arafeh <arafehaseel@gmail.com>
+
+    File description:
+        This file contains style code for urgent news section.
+*/
+/*
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Aseel Arafeh <arafehaseel@gmail.com>
+        Suhair Shareef <suhairshareef1999@gmail.com>
+
+    File description:
+        This file contains shared variables used for different page tags.
+*/
+/*
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Aseel Arafeh <arafehaseel@gmail.com>
+        Suhair Shareef <suhairshareef1999@gmail.com>
+        Latifa Masri <latifa.masri1998@gmail.com>
+
+    File description:
+        This file contains shared functions used for different page style.
+*/
+/*
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Aseel Arafeh <arafehaseel@gmail.com>
+        Suhair Shareef <suhairshareef1999@gmail.com>
+
+    File description:
+        This file contains shared variables used for different page tags.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Segoe UI; }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  direction: rtl; }
+
+@media screen and (min-height: 901px) {
+  #urgent-container {
+    font-size: 28px; } }
+@media screen and (max-height: 900px) {
+  #urgent-container {
+    font-size: 23.333px; } }
+@media screen and (max-height: 810px) {
+  #urgent-container {
+    font-size: 21px; } }
+@media screen and (max-height: 768px) {
+  #urgent-container {
+    font-size: 20px; } }
+#urgent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 41.356%;
+  flex-direction: row;
+  position: absolute;
+  top: 58.644%;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  background-color: #D63031;
+  color: #FFFFFF;
+  font-weight: bold;
+  min-height: 36.65px; }
+  #urgent-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    height: auto;
+    flex-direction: row;
+    padding-right: 4%;
+    padding-left: 4%; }
+  #urgent-container #urgent-content {
+    direction: ltr;
+    padding: 1.042%;
+    padding-right: 5.21%;
+    font-size: 70%; }
+    #urgent-container #urgent-content a {
+      text-decoration: none;
+      padding-left: 100px;
+      color: #FFFFFF; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,105 @@
+<!--
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Diana Mujahed <diana.muj98@gmail.com>
+        Amir Altakroori <ameertakrouri99@gmail.com>
+        Ibrahim Abusamrah <ibrahim.abusamrah123@gmail.com>
+
+    File description:
+        This file contains HTML code for the categories page.
+-->
+
+<!-- HEADER -->
+<div class="header" $include="/website/templates/header.html ,/website/controllers/header.js"></div>
+
+<div class="category-view">
+    <!-- Page contnet title -->
+    <p class="category-view-name">{{$category.title}}</p>
+    <hr>
+    <div class="category-view-container">
+        <!-- Start right category page content -->
+        <div class="right-col">
+            <!-- Start main section of category-->
+            <div class="main-category-section">
+                <!-- Right main news sidebar -->
+                <div class="right-sidebar">
+                    <!-- List of main news items -->
+                    <div $for="news of listMainNews" class="news-list">
+                        <div class="news">
+                            <div $click="changeMainNews($news)" class="centered-img-background right-side-image" style="background-image: url({{$news.attachment}});">
+                                <span $click="changeMainNews($news)" class="text-overflow two-line-text-overflow">{{$news.title}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Start main news section -->
+                <div class="main-section">
+                    <div class="main-news">
+                        <!-- Main news image -->
+                        <div id="category-main-news-image" class="centered-img-background" style="background-image: url({{$mainNews.attachment}});"></div>
+                        <!-- Main news details -->
+                        <div class="details">
+                            <h3 id="category-main-news-title" class="text-overflow one-line-text-overflow">{{$mainNews.title}}</h3>
+                            <div id="category-main-news-writng-details">
+                                <div id="category-main-news-writer">{{$writer.firstName}} {{$writer.lastName}}</div>
+                                <img src="img/calenderIcon.png" alt="calender icon">
+                                <span id="category-main-news-date">{{$mainNews.createDate}}</span>
+                            </div>
+                            <div id="category-main-news-content-news" class="text-overflow two-line-text-overflow">{{$mainNews.seoDescription}}</div>
+                        </div>
+                        <!-- See more details -->
+                        <div id="category-see-more">
+                            <a href="#/details/{{$mainNews._id}}">
+                                <img src="img/arrowIcon.png" alt="arrow icon">
+                                <p>اقرأ المزيد</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End main news section -->
+            </div>
+            <!-- End main section of category-->
+            <!-- Start related category news -->
+            <div class="relates-news">
+                <!-- Left related news list -->
+                <div class="related-news-left">
+                    <ul $for="news of rightNewsInCategory" id="related-news-menu-right">
+                        <a href="#/details/{{$news._id}}">
+                            <li>
+                                <img src="{{$news.attachment}}" alt="photo">
+                                <p class="text-overflow two-line-text-overflow">{{$news.title}}</p>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <!-- Right related news list -->
+                <div class="related-news-left">
+                    <ul $for="news of liftNewsInCategory" id="related-news-menu-right">
+                        <a href="#/details/{{$news._id}}">
+                            <li>
+                                <img src="{{$news.attachment}}" alt="photo">
+                                <p class="text-overflow two-line-text-overflow">{{$news.title}}</p>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <!-- End related category news -->
+        </div>
+        <!-- End right category page content -->
+        <!-- Left category page content -->
+        <div class="left-col">
+            <!-- List of random news  -->
+            <p class="title">منوعات</p>
+            <ul $for="news of randomNews" id="random-content">
+                <li class="card random-new" id="{{$news.value.id}}">
+                    <img src="{{$news.value.image}}" alt="">
+                    <a href="#/details/{{$news.value.id}}" class="text-overflow two-line-text-overflow">{{$news.value.title}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

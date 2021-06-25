@@ -1,0 +1,65 @@
+<!--
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Qusai Hroub <qusaihroub.r@gmail.com>
+        Aseel Arafeh <arafehaseel@gmail.com>
+
+    File description:
+        This file contains HTML code for the index page.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo-color.png">
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="styles/categories.css" />
+    <link rel="stylesheet" type="text/css" href="styles/details.css" />
+    <link rel="stylesheet" type="text/css" href="styles/index.css" />
+    <link rel="stylesheet" type="text/css" href="styles/home.css" />
+    <link rel="stylesheet" type="text/css" href="styles/underMaintenance.css" />
+</head>
+<body>
+    <div class="root">
+        <div class="view-root">
+            <!-- VIEW CONTAINER -->
+            <div class="view" VIEW>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="new-footer">
+                <div class="a">
+                     <a href="#/home" class="logo"> <img src="./img/logo.png" alt="شبكة الوحدة الإخبارية"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                  <a> 2020 Copyright PSEU  &copy;</a>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        window.onhashchange = function() {
+            let config = JSON.parse(localStorage.getItem("config"));
+            this.language = config.language;
+            this.page.url = config.tpage;
+        }
+
+        function disqus_config() {
+            let config = JSON.parse(localStorage.getItem("config"));
+            this.language = config.language;
+            this.page.url = config.tpage;
+            // Replace PAGE_URL with your page's canonical URL variable this.page.identifier = 'postid=1'; // Replace PAGE_IDENTIFIER with your page's unique identifier
+        };
+    </script>
+    <script src="./potato/potato.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

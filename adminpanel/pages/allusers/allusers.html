@@ -1,0 +1,93 @@
+<div class="row header-subheader ">
+    <div>
+        الرئيسية > لوحة التحكم > المستخدمين > المستخدمين
+    </div>
+</div>
+
+<div class="container">
+    <div class="content_header">
+        <div class="title">
+            <span class="title_text">جميع المستخدمين</span>
+        </div>
+        <div  $if='!$loading' style="direction:ltr"  class="search-box">
+            <input id='search' onkeyup='searchElement(1)' type="text"  placeholder='ادخل اسم المستخدم'>
+            <i id="icon if" class="search id"></i>
+        </div>
+    
+
+    </div>
+    <div $if='$loading' class='flex-container-center-all-column height-100'>
+        <img src="./img/loader.gif" alt="">
+    </div>
+    <table  $if='!$loading' class="content">
+        <thead>
+            <tr class="first_row">
+                <th>#</th>
+                <th>الاسم الكامل</th>
+                <th>الدور</th>
+                <th>الحالة</th>
+                <th>العمليات</th>
+            </tr>
+        </thead>
+        <tbody id="rows" $for="user of usersPage">
+
+            <tr class='user_info'>
+                <td class="user_no">{{$i+1}}</td>
+                <td class="user_full">
+                  <span>  {{$user.firstName}} {{$user.lastName}}</span>
+                </td>
+                <td>
+                    <div $if ='$role == 3'>
+                        <select $change='updateStatus("role",$i)' class="selection role">
+                            <option value="1">كاتب</option>
+                            <option value="2">مشرف</option>
+                            <option value="3">مسؤول</option>
+
+                        </select>
+                    </div>
+                    <div $if='$role  == 2 && $user.role  == 1'>
+                        كاتب
+                    </div>
+                    <div $if='$role == 2 && $user.role== 2'>
+                        مشرف
+                    </div>
+                    <div $if='$role == 2 && $user.role== 3'>
+                        مسؤول
+                    </div>
+                </td>
+                <td>
+                    <div $if='$role == 2 && $user.role  == 1 || $role == 3  '>
+                        <select $change='updateStatus("state",$i)' class="selection state">
+                            <option value="1">فعال</option>
+                            <option value="0">غير فعال</option>
+                        </select>
+                    </div>
+
+                    <div $if='$role  == 2 && $user.role >= 2 && $user.state == 1'>
+                        فعال
+                    </div>
+                    <div $if='$role == 2 && $user.role >= 2 && $user.state == 0'>
+                        غير فعال
+                    </div>
+                </td>
+                <td>
+                    <i $if=' $user.role != 3' value="click" class="fas fa-trash-alt delete_user" $click="show('delete',$i)"></i>
+                    <i $if=' $user.role != 3' class="far fa-edit icon color-blue" $click="updateUser($i) "></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal-delete" id="delete">
+    <div class="modal-wrapper">
+        <div class="contain">
+            <p>هل أنت متأكد من إزالة هذا المستخدم ؟</p>
+            <p style="font-size: small;font-weight: 700;">سيتم حذف جميع أخباره</p>
+            <div class="modal-button">
+                <button class="modal-button button1" $click="deleteUser();">نعم</button>
+                <button class="modal-button button2" $click="hide('delete')">لا</button>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,102 @@
+<!--
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Qusai Hroub <qusaihroub.r@gmail.com>
+        Rahmeh Tartouri <rahmeh.tartouri@gmail.com>
+        Aseel Arafeh <arafehaseel@gmail.com>
+        Suhair Shareef <suhairshareef1999@gmail.com>
+
+    File description:
+        This file contains HTML code for the home page.
+-->
+
+
+<!-- HEADER -->
+<div class="header" $include="/website/templates/header.html ,/website/controllers/header.js"></div>
+
+<!-- HOME VIEW -->
+<div class="home-view">
+
+    <!-- LATEST NEWS -->
+    <div class="latest-news">
+        <div class="latest-news-container">
+            <div class="latest-news-list-header">
+                <p>آخر الأخبار</p>
+            </div>
+            <div $for="news of mainNews" id="latest-news-list">
+                <div $click="changeSelectedNews($news)" class="news">
+                    <img $click="changeSelectedNews($news)" src="{{$news.value.attachment}}">
+                    <p $click="changeSelectedNews($news)" class="text-overflow two-line-text-overflow">{{$news.value.title}}</p>
+                </div>
+            </div>
+        </div>
+        <div id="latest-news-more-detailed-container">
+            <div class="latest-news-more-detailed-image-div">
+                <img class="latest-news-more-detailed-image" src="{{$selectedNews.value.attachment}}">
+            </div>
+            <div class="latest-news-more-detailed-title-and-date">
+                <div class="latest-news-more-detailed-title">
+                    <h4 class="text-overflow one-line-text-overflow">{{$selectedNews.value.title}}</h4>
+                </div>
+                <div class="latest-news-more-detailed-date">
+                    <p class="authorName">{{$selectedNews.writer.firstName}} {{$selectedNews.writer.lastName}}</p>
+                    <img src="./img/calenderIcon.png">
+                    <p class="published">{{$selectedNews.key}}</p>
+                </div>
+            </div>
+            <div class="latest-news-more-detailed-paragraph">
+                <p class="text-overflow two-line-text-overflow">{{$selectedNews.value.content}}</p>
+            </div>
+            <div class="latest-news-more-detailed-readmore-button">
+                <a href="#/details/{{$selectedNews.value.id}}">
+                    <img src="./img/arrowIcon.png">
+                    <p>اقرأ المزيد</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- RANDOM NEWS -->
+    <div class="random-news">
+        <div class="imagesPrev"><img $click="slide(1)" src="./img/arrow.png" ></div>
+
+        <div id="rendom-news-container" class="rendom-news-container">
+
+        </div>
+
+        <div class="imagesNext"><img $click="slide(-1)" src="./img/arrow-left.png"></div>
+    </div>
+
+    <!-- CATEGORY SECTION -->
+    <div $for="category of categoriesView" class="category-section">
+        <div class="category-container">
+            <div class="category-header" id="title">
+                <div class="category-header-name"><a class="link" href="#/categories/{{$category.value.id}}">{{$category.value.title}}</a></div>
+                <div class="category-read-more "><a class="read-more-btn" href="#/categories/{{$category.value.id}}"> المزيد &gt;</a></div>
+            </div>
+            <hr>
+            <div class="category-content">
+                <div class="category-content-main" id="main-news">
+                    <div class="category-main-image-div">
+                        <img id="category-image" src="{{$category.mainNews.attachment}}" alt="{{$category.value.title}}">
+                    </div>
+                    <div class="category-main-title-and-date">
+                        <div class="category-main-title"><a class="link text-overflow one-line-text-overflow" href="#/details/{{$category.mainNews._id}}">{{$category.mainNews.title}}</a></div>
+                        <div class="category-main-date">{{$category.mainNews.createDate}}</div>
+                    </div>
+                    <div class="category-main-details text-overflow two-line-text-overflow">{{$category.mainNews.seoDescription}}</div>
+                    <a class="read-more-btn category-btn" href="#/details/{{$category.mainNews._id}}">اقرأ المزيد &gt;</a>
+                </div>
+                <div $for="mainNews of category.allMain" class="category-content-random" id="sub-news">
+                    <div class="category-content-random-item">
+                        <img class="category-img-rnd" id="category-image" src="{{$mainNews.attachment}}" alt="">
+                        <div class="category-randome-title"><a class="link text-overflow two-line-text-overflow" href="#/details/{{$mainNews._id}}">{{$mainNews.title}}</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

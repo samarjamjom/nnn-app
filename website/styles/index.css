@@ -1,0 +1,311 @@
+/*
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Suhair Shareef <suhairshareef1999@gmail.com>
+
+    File description:
+        This file contains style code for the index file.
+*/
+/*
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Aseel Arafeh <arafehaseel@gmail.com>
+        Suhair Shareef <suhairshareef1999@gmail.com>
+
+    File description:
+        This file contains shared variables used for different page tags.
+*/
+/*
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Aseel Arafeh <arafehaseel@gmail.com>
+        Suhair Shareef <suhairshareef1999@gmail.com>
+        Latifa Masri <latifa.masri1998@gmail.com>
+
+    File description:
+        This file contains shared functions used for different page style.
+*/
+/*
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Aseel Arafeh <arafehaseel@gmail.com>
+        Suhair Shareef <suhairshareef1999@gmail.com>
+
+    File description:
+        This file contains shared variables used for different page tags.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Segoe UI; }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  direction: rtl; }
+
+@media print {
+  .footer {
+    visibility: hidden; }
+
+  .header {
+    visibility: hidden; } }
+@media screen and (min-height: 901px) {
+  .logo-img {
+    height: 110px; }
+
+  .footer .footer-right img {
+    height: 110px; }
+
+  .navbar {
+    font-size: 20px; } }
+@media screen and (max-height: 900px) {
+  .logo-img {
+    height: 91px; }
+
+  .footer .footer-right img {
+    height: 91px; }
+
+  .navbar {
+    font-size: 16.66667px; } }
+@media screen and (max-height: 810px) {
+  .logo-img {
+    height: 82.5px; }
+
+  .footer .footer-right img {
+    height: 82.5px; }
+
+  .navbar {
+    font-size: 14.22px; } }
+@media screen and (max-height: 768px) {
+  .logo-img {
+    height: 78.2222px; }
+
+  .footer .footer-right img {
+    height: 78.2222px; } }
+html {
+  overflow-x: hidden; }
+
+body {
+  width: 100%;
+  min-width: 1352px;
+  min-height: 649px; }
+  body .root {
+    position: relative;
+    top: 0;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    background-color: white;
+    min-width: 1352px;
+    min-height: 649px; }
+    body .root .header {
+      z-index: 1;
+      background-color: white;
+      min-height: 87.65px;
+      min-width: 1368px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 13.658%;
+      flex-direction: row;
+      position: fixed;
+      top: 0;
+      bottom: auto;
+      left: auto;
+      right: auto; }
+      body .root .header .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 58.644%;
+        flex-direction: row;
+        position: absolute;
+        top: 0;
+        bottom: auto;
+        left: 0;
+        right: 0;
+        flex-flow: nowrap;
+        min-height: 52px; }
+        body .root .header .navbar .navbar-right {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 85%;
+          height: 100%;
+          flex-direction: row;
+          position: absolute;
+          top: 0;
+          bottom: auto;
+          left: auto;
+          right: 0.1042%; }
+          body .root .header .navbar .navbar-right .logo-img {
+            width: 165px;
+            margin-right: 10px; }
+          body .root .header .navbar .navbar-right .categories-container {
+            width: 85%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            bottom: auto;
+            left: 0;
+            right: auto; }
+            body .root .header .navbar .navbar-right .categories-container .tab {
+              color: black;
+              width: 13%;
+              padding-top: 1%;
+              padding-bottom: 1%;
+              text-align: center;
+              border-block-start: solid 5px white;
+              font-weight: 300; }
+              body .root .header .navbar .navbar-right .categories-container .tab:hover {
+                border-block-start: solid 5px #0C4D6D;
+                font-weight: 450;
+                cursor: pointer; }
+            body .root .header .navbar .navbar-right .categories-container .active {
+              border-block-start: solid 5px #0C4D6D; }
+            body .root .header .navbar .navbar-right .categories-container .expand {
+              cursor: pointer; }
+              body .root .header .navbar .navbar-right .categories-container .expand:hover {
+                position: absolute; }
+            body .root .header .navbar .navbar-right .categories-container .sub-menu {
+              align-items: center;
+              justify-content: center;
+              min-height: 100%;
+              position: sticky;
+              top: 20px;
+              bottom: auto;
+              left: 0;
+              right: auto;
+              z-index: 1;
+              display: none;
+              background-color: #0C4D6D;
+              color: white;
+              width: 100%;
+              font-weight: 300;
+              height: 100%; }
+              body .root .header .navbar .navbar-right .categories-container .sub-menu .sub-item {
+                width: 100%;
+                height: 100%;
+                padding-top: 10px;
+                padding-bottom: 10px; }
+                body .root .header .navbar .navbar-right .categories-container .sub-menu .sub-item a {
+                  color: white;
+                  text-decoration: none;
+                  padding: 3px; }
+              body .root .header .navbar .navbar-right .categories-container .sub-menu .sub-item:hover {
+                font-weight: 450;
+                background-color: rgba(221, 214, 214, 0.34); }
+            body .root .header .navbar .navbar-right .categories-container li {
+              display: inline-block;
+              font-size: 20px;
+              margin-top: 0; }
+              body .root .header .navbar .navbar-right .categories-container li:hover {
+                font-weight: 450; }
+                body .root .header .navbar .navbar-right .categories-container li:hover ul {
+                  display: inline-block; }
+              body .root .header .navbar .navbar-right .categories-container li a {
+                color: black;
+                text-decoration: none; }
+            body .root .header .navbar .navbar-right .categories-container .expand-button {
+              height: 16px;
+              padding-top: 6px;
+              padding-right: 3px; }
+        body .root .header .navbar .navbar-left {
+          width: 10%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          bottom: auto;
+          left: 0;
+          right: auto; }
+          body .root .header .navbar .navbar-left .login-button {
+            background-color: #0C4D6D;
+            border: none;
+            color: white;
+            padding: 3.705% 9.25%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            position: absolute;
+            top: 22.254%;
+            bottom: auto;
+            left: 13.67%;
+            right: auto;
+            font-weight: 300;
+            font-size: 100%;
+            border-radius: 5%;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s; }
+            body .root .header .navbar .navbar-left .login-button:hover {
+              opacity: 0.7;
+              cursor: pointer;
+              transition: all 0.6s; }
+
+.new-footer {
+  background-color: #C2C2C2;
+  color: #000;
+  line-height: 1.5;
+  width: 100%;
+  display: flex;
+  color: 000;
+  position: relative; }
+  .new-footer a img {
+    width: 150px; }
+
+.footer-bottom {
+  width: 100%;
+  padding: 2px;
+  color: #bbb;
+  background-color: #858585;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; }
+
+.view-root {
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin-top: 7%;
+  margin-bottom: 2%; }
+  .view-root .view {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: white; }
+
+.text-overflow {
+  width: 100% !important;
+  overflow: hidden !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  text-overflow: ellipsis !important; }
+
+.one-line-text-overflow {
+  -webkit-line-clamp: 1 !important; }
+
+.two-line-text-overflow {
+  -webkit-line-clamp: 2 !important; }
+
+.footer {
+  position: relative; }
+
+/*# sourceMappingURL=index.css.map */

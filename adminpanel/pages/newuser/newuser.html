@@ -1,0 +1,52 @@
+<div class="row header-subheader ">
+    <div>
+        الرئيسية > لوحة التحكم >المستخدمين > إنشاء مستخدم
+    </div>
+</div>
+</header>
+<div class="container">
+    <div class="content_header" style="border: none;">
+        <div class="title">
+            <span class="title_text">{{$btnTitle}}</span>
+        </div>
+    </div>
+
+</div>
+<div class="all">
+    <form id="adduserid" $submit='saveUser()' class='flex-box-35'>
+        <div class="contain">
+            <div>
+                <h1>{{$btnTitle}}</h1>
+            </div>
+            <div>
+                <span>الاسم الأول</span>
+                <input class="fname" type="text" $model='firstName' placeholder="الأسم الأول" required>
+            </div>
+
+            <div>
+                <span>الاسم الأخير</span>
+                <input class="lname" type="text" $model='lastName' placeholder="الاسم الأخير" required></div>
+            <div $if="$_id ==0">
+                <span>اسم المستخدم</span>
+                <input class="name-user" type="text" $model="userid" placeholder="اسم المستخدم"
+                    required></div>
+            <div>
+                <span>البريد الالكتروني</span>
+                <input class="email" type="email" $model="email" id="Email" placeholder="البريد الالكتروني" required
+                    unique></div>
+            <div $if="$_id == 0 ">
+                <span>كلمة المرور</span>
+                <input class="password" minlength="8" type="password" $model="password" placeholder='كلمة المرور'
+                    required>
+            </div>
+            <div $if="$_id ==0">
+                <span>تأكيد كلمة المرور</span>
+                <input class="password" type="password" $model="repassword" id="confirmpassword"
+                    placeholder="اعادة كلمة المرور" required></div>
+            <div class='newuser-row' style="padding:0">
+            <button $disabled='$submitted' id="savebtn" class="create-new-user" type="submit">{{$btnTitle}}</button>
+
+            </div>
+        </div>
+    </form>
+</div>

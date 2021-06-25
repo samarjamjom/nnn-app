@@ -1,0 +1,38 @@
+.newsapprove-inline-block {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.newsapprove-approve-button {
+  width: 100px;
+  height: 60px;
+  background: #079;
+  color: white;
+  font-size: 18px;
+  margin: 30px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.newsapprove-flex-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+/*# sourceMappingURL=newsapprove.css.map */

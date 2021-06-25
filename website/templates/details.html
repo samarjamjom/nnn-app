@@ -1,0 +1,86 @@
+<!--
+    NNN website.
+
+    This file is part of the NNN website.
+
+    Authors:
+        Abed Al-Fattah Hroub <abedhb8@gmail.com >
+        Latifa Masri <latifa.masri1998@gmail.com>
+
+    File description:
+        This file contains HTML code for the details page.
+-->
+
+<!-- HEADER -->
+<div class="header" $include="/website/templates/header.html ,/website/controllers/header.js"></div>
+
+<div>
+    <div class="details-page-wrapper">
+        <div class="news-content">
+            <section class="news-header" id="news">
+                <span>
+                    <h1 >
+                        {{$news.title}}
+                    </h1>
+                    <div>
+                        <div class="main-img" style=" background-image: url('{{$news.attachment}}');">
+                            <img class="view-in-print" src="{{$news.attachment}}" alt="">
+                        </div>
+                        <div class="news-more-info">
+                            <p class="authorName">{{$writer.firstName}} {{$writer.lastName}}</p>
+
+                            <p class="published">{{$news.createDate}}</p>
+                            <img src="./img/calenderIcon.png">
+                        </div>
+                    </div>
+                 </span>
+                <article class="article" id="article">
+                    <span>
+                        <p>
+                            {{$news.content}}
+                        </p>
+                    </span>
+                </article>
+            </section>
+            <aside class="news-related">
+                <ul class="related-news-menu">
+                    <div class="related-header">
+                        <h4>ذات صلة </h4>
+                    </div>
+                    <!-- <li> -->
+                    <div $for="relatedNew of relatedNews">
+                        <li class="list-n" id="{{$relatedNew._id}}">
+                            <img src="{{$relatedNew.attachment}}" alt="">
+                            <a href="#/details/{{$relatedNew._id}}" class="text-overflow two-line-text-overflow">{{$relatedNew.title}}</a>
+                        </li>
+                    </div>
+                    <!-- </li> -->
+                </ul>
+            </aside>
+        </div>
+        <div class="news-body">
+            <section class="news-sharing">
+                <div id="share-button" class="share-buttons">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={PAGEURL}&t={PAGETITLE}" target="_blank" title="Share on Facebook">
+                        <img src="./img/facebook.png" alt="Facebook" />
+                    </a>
+                    <!-- twitter -->
+                    <a href="https://twitter.com/intent/tweet?source={PAGEURL}&text={PAGETITLE}:{PAGEURL}&via={TWITTERUSERNAME}" target="_blank" title="Tweet">
+                        <img src="./img/twitter.png" alt="twitter" />
+                    </a>
+                    <!-- google-plus -->
+                    <a href="https://plus.google.com/share?url={PAGEURL}" target="_blank" title="Share on Google+">
+                        <img src="./img/google-plus.png" alt="google-plus" />
+                    </a>
+                    <!-- print -->
+                    <a onclick="window.print();return false;">
+                        <img src="./img/print.png" alt="print" />
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Contains comments section -->
+    <div id="disqus_thread">{{$loadDisqus()}}</div>
+</div>

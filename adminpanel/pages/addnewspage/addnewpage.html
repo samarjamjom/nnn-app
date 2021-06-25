@@ -1,0 +1,105 @@
+<div class="row header-subheader ">
+    <div>
+        الرئيسية > لوحة التحكم >الأخبار >إضافة خبر
+    </div>
+</div>
+</header>
+<!-- <span id="route-param">{{$routeParams.id}}</span> -->
+<div class="app_root">
+    <form $submit="saveNews()" class="add_news_form">
+        <div class="title">
+            إضافة خبر
+        </div>
+        <hr>
+        <div class="center_items">
+            <div class="content_label_div">
+                <label>العنوان
+                    <span class="required">*</span>
+                </label>
+
+                <input $model='title' id="title" type="text" class="news_element" placeholder=" " required>
+            </div>
+            <div class="content_label_div">
+                <label>الخبر
+                    <span class="required">*</span>
+                </label>
+                <div class="news_element news">
+                    <div class="news_body" style="background: white;" contenteditable="true" id='editor' dir="ltr"
+                        required> </div>
+                </div>
+            </div>
+            <div class="content_label_div">
+                <label>الفئة
+                    <span class="required">*</span>
+                </label>
+                <select $model="categoryId" id="catt" $for="ct of categories" class="news_element category" required>
+
+                    <option value="{{$ct.value._id}}">{{$ct.value.name}}</option>
+                </select>
+
+            </div>
+            <div class="content_label_div">
+                <label>عنوان النافذة
+                    <span class="required">*</span>
+                </label>
+                <input placeholder=" " type="text" $model="seoTitle" id="seoTitle" class="news_element" required>
+            </div>
+            <div class="content_label_div">
+                <label> الكلمات المفتاحية
+                    <span class="required">*</span>
+                </label>
+                <input placeholder=" " type="text" $model="seoTags" id="seoTags" class="news_element" required>
+            </div>
+            <div class="content_label_div">
+                <label> الوصف
+                    <span class="required">*</span>
+                </label>
+                <textarea type="text" $model="seoDescription" id="seoDescription" class="news_element description" required> </textarea>
+            </div>
+            <div class="content_label_div outer_choice_div">
+                <label>صورة الخبر
+                    <span class="required">*</span>
+                </label>
+                <div class="news_element">
+                    <div class="inner_choice_div">
+                        <div class="status_active_div">
+                            <input type="file" $change='previewImg()' id="picture" placeholder="اختيار الصورة"
+                                accept="image/*" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="addnews-img-container content_label_div outer_choice_div " style="display: none;">
+                <img src="" alt="">
+            </div>
+        </div>
+        <div class="content_label_div outer_choice_div">
+            <label>خبر رئيسي</label>
+            <div class="news_element">
+                <div class="inner_choice_div">
+                    <input name='isMainNews' type="checkbox" id="isMainNews" class="toggle">
+                </div>
+            </div>
+        </div>
+        <div class="content_label_div outer_choice_div">
+            <label>خبر عاجل</label>
+            <div class="news_element">
+                <div class="inner_choice_div">
+                    <input type="checkbox" id="isUrgentNews" name="isUrgentNews" class="toggle">
+                </div>
+            </div>
+        </div>
+
+        <div class="content_label_div outer_choice_div">
+            <label>تاريخ العرض</label>
+            <div class="news_element">
+                <input $change="setScheduleTime()" type="checkbox" class=" choice checkbox" id="enable-checkbox">
+                <input type="date" id="createDate" $model="createDate" class="date">
+            </div>
+        </div>
+        <div class="button_div">
+            <button  id="submit-btn" type="submit" name="add_news" class="button "> إنشاء
+                خبر</button>
+        </div>
+    </form>
+</div>

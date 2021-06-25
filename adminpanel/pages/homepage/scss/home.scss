@@ -1,0 +1,142 @@
+$green_color: #41cf70;
+$pink_color: #f294e2;
+$light_green_color: #8dcc7d;
+$blue_color: #41bccf;
+$red_color: #ff6161;
+$purple_color: #886582;
+$light_yellow_color: #c4cc7d;
+$light_blue_color: #94adf2;
+.light-blue {
+    background: $light_blue_color;
+}
+
+.light-blue:hover {
+    background: darken($light_blue_color, 20%);
+}
+
+.green {
+    background: $green_color;
+}
+
+.green:hover {
+    background: darken($green_color, 20%);
+}
+
+.blue {
+    background: $blue_color;
+}
+
+.blue:hover {
+    background: darken($blue_color, 20%);
+}
+
+.pink {
+    background: $pink_color;
+}
+
+.pink:hover {
+    background: darken($pink_color, 20%);
+}
+
+.light-green {
+    background: $light_green_color;
+}
+
+.light-green:hover {
+    background: darken($light_green_color, 20%);
+}
+
+.light-yellow {
+    background: $light_yellow_color;
+}
+
+.light-yellow:hover {
+    background: darken($light_yellow_color, 20%);
+}
+
+.purple {
+    background: $purple_color;
+}
+
+.purple:hover {
+    background: darken($purple_color, 20%);
+}
+
+.red {
+    background: $red_color;
+}
+
+.red:hover {
+    background: darken($red_color, 20%);
+}
+
+* {
+    direction: rtl;
+}
+
+body {
+    margin: 0;
+    background: #eee;
+}
+
+.body-wrapper {
+    margin: 0 200px 0px 200px;
+}
+
+.homepage-container {
+    display: flex;
+    flex-direction: raw;
+    flex-wrap: wrap;
+    >div {
+        cursor: pointer;
+    }
+    .homepage-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        min-width: 200px;
+        min-height: 150px;
+        margin-left: 25px;
+        margin-top: 20px;
+        border: 0;
+        color: white;
+        position: relative;
+        &:hover {
+            font-size: 18px;
+            transform: scale(1.2);
+            transition: all 0.2s;
+            outline: none;
+            cursor: pointer;
+            .icon {
+                font-size: 80px;
+            }
+        }
+        .home-shadow-icon {
+            position: absolute;
+            font-size: 80px;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            color: rgba(0, 0, 0, 0.1);
+            z-index: 0;
+        }
+        .icon {
+            font-size: 60px;
+        }
+        .homepage-aboveicon {
+            position: relative;
+            z-index: 1px;
+        }
+    }
+    &:last-child {
+        margin-bottom: 20px;
+    }
+}
+
+.homepage-hr {
+    margin-bottom: 15px;
+}

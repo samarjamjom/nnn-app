@@ -1,0 +1,574 @@
+// add your style in this file  if it can be used in multiple pages
+// If your style is specific for a page you have to  create a sass file for the page and add them in it.
+// If your style is specific please use this way when naming : pagename-classname
+$header_color: #36344d;
+$sub-header: white;
+$path_color: #cec9c9;
+$title-color: #333333;
+$font: "Segoe UI";
+$light_light_gray: #f9f9f9;
+$success-color: #27ae60;
+$cancel-color: rgb(163, 159, 159);
+$modal-font-color: rgba(0, 0, 0, 0.7);
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  direction: rtl;
+  font-family: $font;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: #eee;
+}
+
+.main-header {
+  padding: 10px;
+  height: 33px;
+  background-color: $header_color;
+  box-shadow: 0px 1px 10px 1px rgba(69, 65, 78, 0.5);
+  position: relative;
+}
+
+.header-logo {
+  img {
+    height: 60px;
+    cursor: pointer;
+  }
+}
+
+.main-header .nav-left {
+  float: left;
+}
+
+.main-header .nav-right {
+  float: right;
+}
+
+.sub-header {
+  background-color: $sub-header;
+  width: 100%;
+  height: 30px;
+}
+
+.row {
+  width: 100%;
+  display: block;
+}
+
+.header-subheader {
+  background: $sub-header;
+  font-size: 16px;
+  min-height: 25px;
+  > div {
+    padding: 5px;
+    padding-right: 10px;
+    cursor: pointer;
+  }
+  font-weight: 400;
+  color: black;
+}
+
+.header-flex-container {
+  display: flex;
+  height: 70px;
+  &.space-between {
+    justify-content: space-between;
+  }
+  &.item-center {
+    align-items: center;
+  }
+}
+
+.header-inline-block {
+  display: inline-block;
+}
+
+.header-left-section {
+  > div {
+    padding-right: 5px;
+    min-width: 25px;
+    min-height: 25px;
+    cursor: pointer;
+  }
+  font-size: 18px;
+  color: #b5b1dd;
+}
+
+.header-left-section > div:hover {
+  color: white;
+}
+
+.logout-model {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  font-size: 20px;
+  padding-top: 60px;
+}
+.logout-wrapper {
+  min-width: 146px;
+  min-height: 44px;
+  color: white;
+  background-color: #36344d;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  transition: all 1s;
+  animation: fade-in 0.2s ease-in forwards;
+}
+
+.container {
+  padding: 0px;
+  margin: 0px;
+  .content_header {
+    border-bottom: 1px solid $title-color;
+    width: 100%;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      padding: 20px;
+      .title_text {
+        font-family: $font;
+        font-size: 50px;
+        color: $title-color;
+      }
+    }
+  }
+  .search_area {
+    display: flex;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    .search {
+      border: 1px solid $title-color;
+      height: 32px;
+      padding: 0px;
+      .search_field {
+        direction: rtl;
+        font-family: $font;
+        color: black;
+        margin-right: 19px;
+        float: right;
+        font-size: 20px;
+        border: 0px;
+      }
+      ::placeholder {
+        color: black;
+      }
+      input:focus {
+        outline: none;
+      }
+      .search_icon {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .search_word {
+      font-family: $font;
+      color: $title-color;
+      font-size: 20px;
+      margin-left: 40px;
+    }
+  }
+  .content {
+    border-left: 1px solid $light_light_gray;
+    height: 100%;
+    width: 80%;
+    border-collapse: collapse;
+    font-family: $font;
+    direction: rtl;
+    text-align: right;
+    margin-top: 40px;
+    margin-right: 10%;
+    cursor: pointer;
+    .first_row {
+      border-bottom: 1px solid $title-color;
+      font-size: 20px;
+      width: 100%;
+      font-weight: 400;
+      padding: 8px;
+      background: #36344d;
+      color: white;
+      height: 40px;
+    }
+    th,
+    td {
+      border-bottom: 1px solid $title-color;
+      text-align: center;
+    }
+    thead tr {
+      text-align: center;
+    }
+    tbody tr:nth-of-type(odd) {
+      background: #eee;
+    }
+    tbody tr:hover {
+      background: #b7b0ff;
+      color: white;
+    }
+    .user_info {
+      width: 100%;
+      font-family: $font;
+      height: 50px;
+      .user_no {
+        font-size: 18px;
+      }
+      .user_full {
+        .user_name {
+          font-size: 18px;
+        }
+      }
+      .selection {
+        font-size: 18px;
+        border: none;
+        font-family: $font;
+      }
+      .delete_user {
+        font-size: 20px;
+        color: red;
+        margin-left: 5px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.color-blue {
+  color: #079;
+}
+
+.color-orange {
+  color: rgb(182, 63, 166);
+}
+
+.checkbox-size {
+  input {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.flex-container-center-all-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-delete {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: $modal-font-color;
+  display: none;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 40px;
+  opacity: 0;
+  animation: 0.3s popup-animation forwards;
+}
+
+.modal-active {
+  display: flex;
+  opacity: 1;
+  transition: all 1s;
+  animation: fade-in 0.2s ease-in forwards;
+}
+
+.modal-wrapper {
+  min-width: 700px;
+  min-height: 350px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.modal-button {
+  font-size: 30px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  min-width: 200px;
+  min-height: 50px;
+  color: white;
+  &.button1 {
+    background-color: $success-color;
+  }
+  &.button2 {
+    background-color: $cancel-color;
+  }
+  &.button1:hover {
+    background-color: darken($success-color, 10%);
+  }
+  &.button2:hover {
+    background-color: darken($cancel-color, 10%);
+  }
+}
+
+.modal-delete_user:active.delete {
+  opacity: 1;
+  transition: 0.5s;
+  display: flex;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.required {
+  color: red;
+  margin: 0px 2px;
+  display: inline-block;
+}
+
+.flex-container-center-space-between-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mb-5 {
+  margin-bottom: 5%;
+}
+
+.alert-container {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  flex-direction: column;
+  left: 3%;
+  z-index: 20;
+  bottom: 6%;
+}
+.popup {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+  color: #dff0d8;
+  width: 300px;
+  position: relative;
+  border-radius: 4px;
+  line-height: 20px;
+  min-width: 250px;
+  font-size: 12px;
+  min-height: 70px;
+  text-align: center;
+  // display: none;
+  border-color: #d6e9c6;
+  // animation: popup-animation 0.5s linear;
+  .icon {
+    flex-basis: 20%;
+    color: white;
+    font-size: 30px;
+  }
+  .body {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+  }
+  &.danger {
+    background-color: #a94442;
+  }
+  &.success {
+    background-color: #319145;
+  }
+  &.info {
+    background-color: #31708f;
+  }
+}
+
+input[class="toggle"] {
+  margin: 0;
+  margin-bottom: 10px;
+  -webkit-appearance: button;
+  border: none;
+  background-color: #ccc;
+  width: 60px;
+  height: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+input[class="toggle"]:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  margin: 2px;
+  border-radius: 50px;
+  transition: 0.2s all;
+}
+
+input[class="toggle"]:checked {
+  background-color: #414898;
+}
+
+input[class="toggle"]:checked:after {
+  left: 30px;
+}
+
+input[class="toggle"]:focus {
+  outline: 0;
+}
+
+@keyframes popup-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+.delete-toast {
+  position: absolute;
+  left: 2%;
+  top: 0;
+  cursor: pointer;
+}
+
+.search-box {
+  margin: 1%;
+  display: flex;
+  width: 250px;
+  border: none;
+  position: relative;
+  height: 60px;
+  background: #5e43ff;
+  border-radius: 15px;
+  box-shadow: 0 3px 5px #beb4ff;
+  color: white;
+  font-weight: 600;
+  cursor: text;
+  & input {
+    &::placeholder {
+      color: white;
+      font-size: 16px;
+    }
+    direction: rtl;
+    padding: 5px;
+    font-size: 16px;
+    position: absolute;
+    z-index: 0;
+    width: 250px;
+    height: 60px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    background: #36344d;
+    padding-left: 60px;
+    &:focus {
+      outline: none;
+      & + .search {
+        transform: perspective(400px) rotateY(89deg);
+        padding: 3px 0;
+        opacity: 0;
+      }
+    }
+  }
+  & i.search {
+    height: 20px;
+    width: 20px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    transform: rotatez(-45deg);
+    top: 17px;
+    left: 5%;
+    transition: 0.2s all;
+    transform-style: preserve-3d;
+    perspective: 400px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 5px;
+      height: 15px;
+      background: #fff;
+      position: absolute;
+      left: calc(50% - 2px);
+      border-radius: 10px;
+      top: 101%;
+    }
+  }
+}
+.screen-center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"] {
+  font-family: $font;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #555555;
+  border: 1px solid #eee;
+  padding: 0 22px 0 22px;
+  outline: none;
+  &::placeholder{
+    font-size: 15px;
+  }
+
+  &:focus,&:not(:placeholder-shown){
+    border: 2px solid #719ECE;
+  }
+  &:required:not(:placeholder-shown):invalid{
+    border: 2px solid red;
+  }
+  &:required:not(:placeholder-shown):valid{
+    border: 2px solid #57b846;
+  }
+}
+.root-flex-container{
+  display: flex;
+  height: 100%;
+  flex-direction: column;;
+}

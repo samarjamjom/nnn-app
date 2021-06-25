@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="./fontawesome/all.min.js"></script>
+    <link rel="stylesheet" href="./fontawesome/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/adminpanel/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="./pages/homepage/css/home.css">
+    <link rel="stylesheet" type="text/css" href="./pages/allnews/css/allnews.css">
+    <link rel="stylesheet" type="text/css" href="./pages/allusers/css/allusers.css">
+    <link rel="stylesheet" type="text/css" href="./pages/categories/css/categories.css">
+    <link rel="stylesheet" type="text/css" href="./pages/addnewspage/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./pages/mynews/css/mynews.css">
+    <link rel="stylesheet" type="text/css" href="./pages/newsapprove/css/newsapprove.css">
+    <link rel="stylesheet" type="text/css" href="./pages/newuser/css/newuser.css">
+    <link rel="stylesheet" type="text/css" href="./pages/login/css/login.css">
+
+    <script src="./js/quill.min.js"></script>
+    <link href="./pages/addnewspage/css/quill.snow.css" rel="stylesheet">
+    <link href="./pages/addnewspage/css/quill.core.css" rel="stylesheet">
+    <script type="module" src="./js/backend.js"></script>
+    <script type="module" src="./js/database.js"></script>
+
+    <script src="./js/frontend.js"></script>
+
+    <script>
+        let alertNumber = 0;
+        let info = 0;
+        function checkHeader() {
+            setTimeout(() => {
+                const header = document.getElementById('header');
+                // console.log(header);
+                if (header) {
+                    if (location.hash == '#/login.html' || location.href == "") {
+                        if (header) {
+                            header.style.display = 'none';
+                        }
+                    } else header.style.display = 'block';
+                }
+                checkHeader();
+            }, 1000);
+        }
+        const userData = JSON.parse(sessionStorage.getItem('user'));
+        if (!userData) {
+            window.location.href = '#/login.html';
+        }
+        document.addEventListener("DOMContentLoaded", (e) => {
+            checkName();
+            checkHeader();
+        })
+        function checkName() {
+            const userData = JSON.parse(sessionStorage.getItem('user'));
+            if (!userData) {
+                setTimeout(() => {
+                    checkName();
+                }, 1000);
+            } else
+                document.getElementById("username").innerHTML = userData.id;
+        }
+        function deleteMe(e) {
+            e.parentElement.parentElement.removeChild(e.parentElement);
+        }
+        function createToast(header, message, type, icon) {
+            alertNumber++;
+            const container = document.getElementById('alert-container');
+            let div = document.createElement('div');
+            if (type != 'info') {
+                const prev = info;
+                const isInfo = document.getElementById(`info${prev}`);
+                if (isInfo) {
+                    container.removeChild(isInfo.parentElement);
+                    info--;
+                }
+            }
+            if (type == 'info') {
+                info++;
+                div.innerHTML += `  <div id="${type}${info}" class= "popup ${type}" >
+                <div class='icon'>
+                    <i class="fas fa-${icon}"></i>
+                </div>
+                <div class='body'>
+                    <h3>${header}
+                    </h3>
+                    <span>${message}</span>
+                </div>
+                <div onclick='deleteMe(this)' class='delete-toast'>
+                    <h3>x</h3>
+                </div>
+        </div >`
+                container.appendChild(div);
+                try {
+                    setTimeout(() => {
+
+                        if (div) {
+                            container.removeChild(div);
+                        }
+                    }, 10000);
+                } catch (e) { };
+                return;
+            }
+
+            div.innerHTML += `  <div id="${type}${alertNumber}" class= "popup ${type}" >
+                <div class='icon'>
+                    <i class="fas fa-${icon}"></i>
+                </div>
+                <div class='body'>
+                    <h3>${header}
+                    </h3>
+                    <span>${message}</span>
+                </div>
+                <div onclick='deleteMe(this)' class='delete-toast'>
+                    <h3>x</h3>
+                </div>
+        </div >`;
+            container.appendChild(div);
+            try {
+                setTimeout(() => {
+
+                    if (div) {
+                        container.removeChild(div);
+                    }
+                }, 3000);
+            } catch (e) { };
+        }
+
+    </script>
+
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="root-flex-container">
+        <header id="header">
+            <div class=" main-header header-flex-container space-between item-center">
+                <div class="header-logo">
+                    <a href='#/home'><img src="./img/logo.png" alt="logo" href="index.html"></a>
+                </div>
+                <div class="header-left-section">
+
+
+                    <div class="header-inline-block">
+                        <li class="fas fa-user"></li>
+                        <span id="username"></span>
+
+                    </div>
+
+                    <div class="header-inline-block" onclick="showLogOut()">
+                        <i class="fas fa-chevron-down"></i>
+                        <div id="logout-model" class="logout-model">
+                            <div class="logout-wrapper" onclick="logOut()">تسجيل الخروج</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+        <div view style="flex-grow: 1;"></div>
+        <script src='../potato/potato.min.js'></script>
+        <script src='app.js'></script>
+
+    </div>
+    <div class='alert-container' id='alert-container'>
+    </div>
+</body>
+
+</html>

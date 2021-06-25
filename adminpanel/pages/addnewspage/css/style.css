@@ -1,0 +1,92 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+.add_news_form .title {
+  font-size: 50px; }
+.add_news_form .center_items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 10px; }
+.add_news_form .content_label_div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 20px; }
+.add_news_form .news_element {
+  width: 500px;
+  height: 25px; }
+.add_news_form .news {
+  height: auto;
+  border: 0.5px solid grey; }
+  .add_news_form .news .news_body {
+    height: 258px; }
+.add_news_form .description {
+  height: 50px;
+  resize: none; }
+.add_news_form .choice {
+  width: 15px;
+  height: 15px;
+  padding-right: 5px; }
+.add_news_form .outer_choice_div {
+  justify-content: center; }
+  .add_news_form .outer_choice_div .inner_choice_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; }
+.add_news_form .category {
+  height: 30px;
+  width: calc(200px + 500px -96px); }
+.add_news_form .date {
+  min-width: 90px;
+  margin-left: 10px; }
+  .add_news_form .date .checkbox {
+    padding-right: 10px; }
+.add_news_form label {
+  width: 200px;
+  height: 28px;
+  padding: 3px;
+  text-align: center;
+  font-weight: 300px;
+  font-size: 20px; }
+.add_news_form .button_div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px; }
+  .add_news_form .button_div .button {
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    background-color: #27ae60;
+    border-style: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer; }
+    .add_news_form .button_div .button:hover {
+      background: #1e8449; }
+    .add_news_form .button_div .button:disabled {
+      background-color: #005aff; }
+
+.ql-picker-label {
+  direction: ltr; }
+
+.addnews-img-container {
+  height: 300px;
+  width: 300px;
+  display: none; }
+  .addnews-img-container img {
+    height: 300px;
+    width: 300px;
+    max-width: 100%; }
+
+.ql-editor.ql-direction-rtl {
+  direction: rtl; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,88 @@
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important; }
+
+.animated-header {
+  background: #000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%; }
+
+.animated-header:before {
+  animation: show-background 60s 0.5s cubic-bezier(0, 1, 0.5, 1) forwards;
+  background: url(./../img/space2.jpg) repeat center;
+  background-size: cover;
+  content: "";
+  opacity: 0;
+  height: 125vh;
+  position: absolute;
+  left: -10%;
+  top: -10%;
+  width: 125vw; }
+
+.earth {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px); }
+
+.text {
+  font-size: 20px;
+  margin-top: 50px;
+  width: 1000px;
+  margin-right: -130px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+
+.Magnifier {
+  animation: spin 30s linear infinite;
+  width: 80px;
+  height: 110px;
+  position: absolute;
+  top: calc(50% - 170px);
+  left: calc(50% - 170px);
+  transform-origin: 200px 200px; }
+
+.earth img {
+  animation: show-on-load 1s 0.5s cubic-bezier(0, 1.6, 0.6, 1) forwards;
+  border-radius: 50%;
+  opacity: 0;
+  width: 100%;
+  box-shadow: 0 0 12em 1em rgba(110, 140, 200, 0.6); }
+
+.Magnifier img {
+  animation: fade-in 2s 1s cubic-bezier(0, 1.5, 1, 1) forwards, spin 30s linear reverse infinite; }
+
+@keyframes spin {
+  to {
+    transform: rotateZ(360deg); } }
+@keyframes show-background {
+  0% {
+    opacity: 0;
+    transform: none; }
+  30% {
+    opacity: .5; }
+  100% {
+    opacity: .5;
+    transform: scale(0.8); } }
+@keyframes show-on-load {
+  0% {
+    opacity: 0;
+    transform: scale(0.5); }
+  100% {
+    opacity: 1;
+    transform: none; } }
+@keyframes fade-in {
+  to {
+    opacity: 1; } }
+.under-maintenance {
+  height: 830px;
+  width: 100%; }
+
+/*# sourceMappingURL=underMaintenance.css.map */
